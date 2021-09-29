@@ -1,0 +1,58 @@
+.App {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #cfcaca;
+  padding: 32px;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 350px;
+  min-height: 80vh;
+  background-color: #fff;
+  padding: 16px;
+  margin: 20px auto;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-weight: bolder;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.image {
+  width: 50%;
+}
+
+.texts {
+  margin-top: 100px;
+  color: #c59d78;
+  text-shadow: 2px 2px 3px #adabad;
+  line-height: 1.75;
+}
+
+.name {
+  width: 50px;
+  padding: 5px;
+  color: #fff;
+  text-shadow: 2px 2px 3px #686568;
+  background-color: #cfcaca;
+  border-radius: 30px;
+}
+
+.input-box {
+  height: 25px;
+  border-radius: 10px;
+  border: 1px solid #8678c5;
+}
+
+.btn-box {
+  width: 90px;
+  height: 30px;
+  border: 1px solid #c59d78;
+  background-color: #c59d78;
+  color: #fff;
+  font-weight: bolder;
+  border-radius: 20px;
+  margin-top: 15px;
+  cursor: pointer;
+}
