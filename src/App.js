@@ -44,31 +44,37 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const bucket = firestore.collection("bucket");
+    const bucket = firestore.collection("buckets"); // collection add
 
-    bucket
-      .doc("bucket_item2")
-      .get()
-      .then((doc) => {
-        if (doc.exists) {
-          console.log(doc);
-          console.log(doc.data());
-          console.log(doc.id);
-        }
-        console.log(doc.exists);
-      });
-    bucket.get().then((docs) => {
-      let bucket_data = [];
+    bucket.doc("bucket_item").set({ text: "수영 배우기", completed: false }); // add text, completed
+    // bucket
+    //   .doc("bucket_item2")
+    //   .get()
+    //   .then((doc) => {
+    //     if (doc.exists) {
+    //       console.log(doc);
+    //       console.log(doc.data());
+    //       console.log(doc.id);
+    //     }
+    //     console.log(doc.exists);
+    //   });
+    // bucket.get().then((docs) => {
+    //   let bucket_data = [];
 
-      docs.forEach((doc) => {
-        if (doc.exists) {
-          bucket_data = [...bucket_data, { id: doc.id, ...doc.data() }];
-        }
-      });
-      console.log(bucket_data);
-    });
+    //   docs.forEach((doc) => {
+    //     if (doc.exists) {
+    //       bucket_data = [...bucket_data, { id: doc.id, ...doc.data() }];
+    //     }
+    //   });
+    //   console.log(bucket_data);
+    // });
+
+    // bucket.add({text:"사진찍기", completed: fasle}).then((docRef) => {console.log(docRef); console.log(docRef.id);});
+    // bucket.doc("bucket_item1").update({ text: "사진찍기", completed: false });
+    // bucket.doc("bucket_item2").delete((docRef) => {
+    //   console.log("지웠어요!!");
+    // });
   }
-
   addBucketList = () => {
     const new_item = { text: this.text.current.value, compeleted: false };
     this.props.create(new_item);
